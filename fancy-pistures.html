@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fancy-pictures</title>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<style>
+
+html,
+body {
+  background: #f5f5f5;
+  font-size: 15px;
+  line-height: 24px;
+  font-family: Roboto, sans-serif;
+  color: #333;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  height: 100%;
+}
+
+a {text-decoration: none !important;}
+
+
+
+.tours-best-prices {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+@media (min-width: 720px) {
+  .tours-best-prices {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
+
+
+.tours-best-prices__item {
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 216px;
+}
+
+/* на мобильных выводим первые 3 карточки */
+.tours-best-prices__item:nth-child(n + 4) {display: none;}
+
+@media (min-width: 720px) {
+  .tours-best-prices__item {width: 50%;}
+  .tours-best-prices__item:nth-child(4) {display: block;}
+}
+
+@media (min-width: 1200px) {
+  .tours-best-prices__item {width: 33.33%;  height: 224px;}
+  .tours-best-prices__item:nth-child(5) {display: block;}
+  .tours-best-prices__item:nth-child(6) {display: block;}
+}
+
+@media (min-width: 1600px) {
+  .tours-best-prices__item {width: 25%;  height: 240px;}
+  .tours-best-prices__item:nth-child(7) {display: block;}
+  .tours-best-prices__item:nth-child(8) {display: block;}
+}
+
+
+
+.tours-best-prices__item-top {
+  display: block;
+  width: 100%;
+  height: 216px;
+  position: absolute;
+  background: center / cover no-repeat;
+}
+
+@media (min-width: 1200px) {.tours-best-prices__item-top{height: 224px;}}
+@media (min-width: 1600px) {.tours-best-prices__item-top {height: 240px;}}
+
+
+.tours-best-prices__item-bg-text {
+  width: 100%;
+  height: 216px;
+  position: absolute;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.7);
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 70%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+.tours-best-prices__item-bg-text span {display: none;}
+
+
+
+
+.tours-best-prices__item-bg-text--effect {
+  overflow: hidden;
+  mix-blend-mode: darken;
+  color: #fff;
+  font-size: 150px;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 150px;
+  white-space: nowrap;
+}
+
+.tours-best-prices__item-bg-text--effect span {
+  display: inline;
+  position: relative;
+  top: -7px;
+  opacity: .7;
+}
+
+@media (min-width: 720px) {.tours-best-prices__item-bg-text--effect span {top: 9px;  left: 23px;}}
+@media (min-width: 1200px) {.tours-best-prices__item-bg-text--effect span {top: 9px;  left: 33px;}}
+
+
+
+
+.tours-best-prices__title {
+  font-size: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 8px;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+@media (min-width: 720px) {.tours-best-prices__title {padding: 24px 30px 8px;}}
+@media (min-width: 1200px) {.tours-best-prices__title {padding: 24px 40px 8px;}}
+
+
+
+
+.tours-best-prices__price {
+  color: #fff;
+  padding: 0 8px;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 -2px 1px #333;
+}
+
+@media (min-width: 720px) {.tours-best-prices__price {padding: 0 30px 8px;}}
+@media (min-width: 1200px) {.tours-best-prices__price {padding: 0 40px 8px;}}
+
+</style>
+
+
+
+</head>
+<body style="background-color: #fff; padding: 10px; text-align: left;">
+
+
+<section class="tours-best-prices-wrapper">
+  <ul class="tours-best-prices">
+
+    <!-- Start: одна карточка (1)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/750/500/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Италия</span>
+        </div>
+        <div class="tours-best-prices__title">Италия</div>
+        <div class="tours-best-prices__price">от <b>45 800</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (1)-->
+
+    <!-- Start: одна карточка (2)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/760/510/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>ОАЭ</span>
+        </div>
+        <div class="tours-best-prices__title">ОАЭ</div>
+        <div class="tours-best-prices__price">от <b>25 900</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (2)-->
+
+    <!-- Start: одна карточка (3)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/770/520/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Таиланд</span>
+        </div>
+        <div class="tours-best-prices__title">Таиланд</div>
+        <div class="tours-best-prices__price">от <b>33 450</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (3)-->
+
+    <!-- Start: одна карточка (4)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/780/530/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Россия</span>
+        </div>
+        <div class="tours-best-prices__title">Россия</div>
+        <div class="tours-best-prices__price">от <b>6 550</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (4)-->
+
+    <!-- Start: одна карточка (5)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/790/540/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Греция</span>
+        </div>
+        <div class="tours-best-prices__title">Греция</div>
+        <div class="tours-best-prices__price">от <b>16 999</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (5)-->
+
+    <!-- Start: одна карточка (6)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/800/550/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Италия</span>
+        </div>
+        <div class="tours-best-prices__title">Италия</div>
+        <div class="tours-best-prices__price">от <b>27 300</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (6)-->
+
+    <!-- Start: одна карточка (7)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/810/550/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Тунис</span>
+        </div>
+        <div class="tours-best-prices__title">Тунис</div>
+        <div class="tours-best-prices__price">от <b>12 000</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (7)-->
+
+    <!-- Start: одна карточка (7)-->
+    <li class="tours-best-prices__item">
+      <a href="#" class="tours-best-prices__item-top" style="background-image: url(https://placeimg.com/850/600/nature);">
+        <div class="tours-best-prices__item-bg-text">
+          <span>Великобритания</span>
+        </div>
+        <div class="tours-best-prices__title">Великобритания</div>
+        <div class="tours-best-prices__price">от <b>67 000</b> р./чел</div>
+      </a>
+    </li>
+    <!-- End: одна карточка (7)-->
+
+  </ul>
+  <!-- Скрипт добавляет класс, если поддерживается эффект -->
+  <script type="text/javascript">
+    if (window.getComputedStyle(document.body).mixBlendMode !== undefined) {
+      $(".tours-best-prices__item-bg-text").addClass("tours-best-prices__item-bg-text--effect");
+    }
+  </script>
+</section>
+
+</body>
+</html>
